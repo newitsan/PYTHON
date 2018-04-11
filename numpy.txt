@@ -1,0 +1,290 @@
+Jupyter QtConsole 4.3.1
+Python 2.7.14 |Anaconda, Inc.| (default, Dec  7 2017, 17:05:42) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+import numpy as np
+
+x=10
+
+print x
+10
+
+type(x)
+Out[4]: int
+
+x=np.array(10)
+
+x
+Out[6]: array(10)
+
+type(x)
+Out[7]: numpy.ndarray
+
+x=np.array([[1,2,3],[4,5,6]])
+
+x
+Out[10]: 
+array([[1, 2, 3],
+       [4, 5, 6]])
+
+x.size
+Out[11]: 6
+
+x.itemsize
+Out[12]: 8
+
+x.dtype
+Out[13]: dtype('int64')
+
+x.dtype>'i2'
+Out[15]: True
+
+x.nbytes
+Out[16]: 48
+
+x.ndim
+Out[17]: 2
+
+x.T
+Out[18]: 
+array([[1, 4],
+       [2, 5],
+       [3, 6]])
+
+
+x[0][0]
+Out[20]: 1
+
+x[0][0]=7
+
+x
+Out[22]: 
+array([[7, 2, 3],
+       [4, 5, 6]])
+
+x[0][0]=7.1
+
+x
+Out[24]: 
+array([[7, 2, 3],
+       [4, 5, 6]])
+
+x[0][0]=8.23
+
+x
+Out[26]: 
+array([[8, 2, 3],
+       [4, 5, 6]])
+
+l1=([1,2,3,4])
+
+l1[0]=2.3
+
+l1
+Out[29]: [2.3, 2, 3, 4]
+
+x1=np.array([[1,2,3][4,5,6]],dtype=float)
+
+x1=np.array([[1,2,3],[4,5,6]],dtype=float)
+
+x1
+Out[32]: 
+array([[1., 2., 3.],
+       [4., 5., 6.]])
+
+x1.size
+Out[33]: 6
+
+x1.itemsize
+Out[34]: 8
+
+x1.dtype
+Out[35]: dtype('float64')
+
+x1.nbytes
+Out[36]: 48
+
+x1.shape=(3,2)
+
+x1
+Out[38]: 
+array([[1., 2.],
+       [3., 4.],
+       [5., 6.]])
+
+x1
+Out[39]: 
+array([[1., 2.],
+       [3., 4.],
+       [5., 6.]])
+
+x1.reshape=(3,2)
+
+x1.reshape(3,2)
+Out[42]: 
+array([[1., 2.],
+       [3., 4.],
+       [5., 6.]])
+
+x1.reshape(2,3)
+Out[43]: 
+array([[1., 2., 3.],
+       [4., 5., 6.]])
+
+x1
+Out[44]: 
+array([[1., 2.],
+       [3., 4.],
+       [5., 6.]])
+
+#in transpose (x.T) and in x1.reshape(2,3) the memory is "temporary" whereas in x1.shape the memory is "permanent"
+
+x=np.array([1,.2])
+
+x
+Out[47]: array([1. , 0.2])
+
+
+#The above is an example for homogenisation.
+
+l1=([1,2,3,4])
+
+l1
+Out[51]: [1, 2, 3, 4]
+
+
+In [29]: l1
+Out[29]: [2.3, 2, 3, 4]
+
+In [30]:
+In [29]: l1
+Out[29]: [2.3, 2, 3, 4]
+
+In [30]:
+  File "<ipython-input-52-6b8df1a5dda3>", line 3
+    Out[29]: [2.3, 2, 3, 4]
+           ^
+SyntaxError: invalid syntax
+
+
+l1=([1,2,3,4,5,6])
+
+l1
+Out[54]: [1, 2, 3, 4, 5, 6]
+
+l1[0]=1.12
+
+l1
+Out[56]: [1.12, 2, 3, 4, 5, 6]
+
+#The above is an example of heterogenisation.The datastructure in python is loosely coupled and in numpy,it is tightly coupled as it accepts only homogeneous value.
+
+x1=np.random.randint(1,size=3)
+
+x1
+Out[59]: array([0, 0, 0])
+
+x1=np.random.randint(10,size=3)
+
+x1
+Out[61]: array([3, 2, 2])
+
+
+x2=np.random.randint(10,size=(3,4))
+
+x2
+Out[65]: 
+array([[9, 4, 0, 0],
+       [5, 4, 3, 7],
+       [6, 0, 6, 7]])
+
+x3=np.random.randint(10,size=(3,3,4))
+
+x3
+Out[67]: 
+array([[[5, 6, 1, 3],
+        [1, 8, 6, 6],
+        [5, 8, 3, 5]],
+
+       [[6, 2, 0, 2],
+        [9, 5, 2, 0],
+        [9, 1, 9, 4]],
+
+       [[8, 7, 4, 3],
+        [0, 4, 0, 9],
+        [1, 7, 5, 4]]])
+
+x1.shape
+Out[68]: (3,)
+
+x2.shape
+Out[69]: (3, 4)
+
+x3.shape
+Out[70]: (3, 3, 4)
+
+x1.size
+Out[71]: 3
+
+x2.size
+Out[72]: 12
+
+x3.size
+Out[73]: 36
+
+x1.ndim
+Out[74]: 1
+
+x2.ndim
+Out[75]: 2
+
+x3.ndim
+Out[76]: 3
+
+x1.dtype
+Out[77]: dtype('int64')
+
+x2.dtype
+Out[78]: dtype('int64')
+
+x3.dtype
+Out[79]: dtype('int64')
+
+x1.nbytes
+Out[80]: 24
+
+x2.nbytes
+Out[81]: 96
+
+x3.nbytes
+Out[82]: 288
+
+x2
+Out[83]: 
+array([[9, 4, 0, 0],
+       [5, 4, 3, 7],
+       [6, 0, 6, 7]])
+
+x2[1]
+Out[84]: array([5, 4, 3, 7])
+
+x2[0]
+Out[85]: array([9, 4, 0, 0])
+
+x2[2]
+Out[86]: array([6, 0, 6, 7])
+
+x2[-1]
+Out[87]: array([6, 0, 6, 7])
+
+x2[-2]
+Out[88]: array([5, 4, 3, 7])
+
+x2[-3]
+Out[89]: array([9, 4, 0, 0])
